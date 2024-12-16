@@ -1,0 +1,63 @@
+[[language]]
+name = "vue"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "vue"] }
+language-servers = ["vuels", "typescript-language-server", "emmet-lsp", "scls"] # Emmet en snippet completion for the last 2
+
+[[language-server.typescript-language-server.config.plugins]]
+name = "@vue/typescript-plugin"
+location = "/full/path/to/typescript/plugin/@vue/typescript-plugin"
+languages = ["vue"]
+
+[[language]]
+ name = "typescript"
+ language-servers = [  "typescript-language-server", "tailwindcss-react", "eslint", "emmet-ls", "scls"]
+ formatter = { command = 'npx', args = ["prettier", "--parser", "typescript", "--no-semi", "--single-quote"] }
+ auto-format = true
+
+[[language]]
+ name = "javascript"
+ language-servers = [ "typescript-language-server", "tailwindcss-react", "eslint", "emmet-ls", "scls"]
+ formatter = { command = 'npx', args = ["prettier", "--parser", "typescript", "--single-quote"] }
+ auto-format = true
+# [language-server.graphql]
+ # command = "graphql-lsp" 
+ # args = ["server", "-m", "stream"]
+ # formatter = { command = 'npx', args = ["prettier", "--parser", "json"] }
+ # # indent = { tab-width = 4, unit = "\t" }
+ # auto-format = true
+
+[[language]]
+ name = "html"
+ formatter = { command = 'npx', args = ["prettier", "--parser", "html"] }
+ language-servers = [ "vscode-html-language-server", "tailwindcss-react", "emmet-ls"]
+ # indent = { tab-width = 4, unit = "\t" }
+ auto-format = true
+
+[[language]]
+ name = "css"
+ formatter = { command = 'npx', args = ["prettier", "--parser", "css"] }
+ language-servers = [ "vscode-css-language-server", "tailwindcss-react", "emmet-ls"]
+ auto-format = true
+
+[[language]]
+ name = "scss"
+ formatter = { command = "prettier", args = ["--stdin-filepath", "dummy.scss"] }
+ # indent = { tab-width = 4, unit = "\t" }
+ language-servers = ["vscode-css-language-server"]
+ auto-format = true
+
+[language-server.volar]
+ command = "vue-language-server"
+ args = ["--stdio"]
+
+[[language]]
+ name = "php"
+ scope = "source.php"
+ injection-regex = "php"
+ file-types = ["php", "inc", "php4", "php5", "phtml", "ctp"]
+ shebangs = ["php"]
+ roots = ["composer.json", "index.php"]
+ comment-token = "//"
+ language-servers = [ "intelephense" ]
+ indent = { tab-width = 4, unit = "    " }
