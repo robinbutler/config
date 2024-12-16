@@ -1,0 +1,45 @@
+theme = "tokyonight_storm"
+
+[editor]
+line-number = "relative"
+auto-pairs = true
+bufferline = "multiple"
+
+[editor.cursor-shape]
+insert = "underline"
+normal = "block"
+select = "block"
+
+[editor.soft-wrap]
+enable = true
+
+[editor.lsp]
+enable = true
+display-messages = true
+
+[keys.normal]
+C-h = "jump_view_left"
+C-l = "jump_view_right"
+
+ret = ["open_below", "normal_mode"]
+S-ret = ["open_above", "normal_mode"]
+
+C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+
+A-C-j = ["extend_to_line_bounds", "yank", "paste_after"]
+A-C-k = ["extend_to_line_bounds", "yank", "paste_before"]
+
+[keys.normal.space]
+w = ":write"
+
+[keys.normal.backspace]
+a = ":set line-number absolute"
+r = ":set line-number relative"
+c = ["normal_mode", ":insert-output echo 'console.log()'", "collapse_selection", "move_char_left", "insert_mode"] 
+
+[keys.insert]
+# j = { j = "normal_mode" }
+j = { j = ["normal_mode", ":write"] }
+
+
