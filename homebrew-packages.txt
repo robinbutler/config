@@ -119,8 +119,6 @@ p11-kit
 pango
 pcre2
 php
-php@8.0
-php@8.2
 phpmyadmin
 pixman
 pkg-config
@@ -161,5 +159,3 @@ zimg
 zlib
 zoxide
 zstd
-google-cloud-sdk
-postman
